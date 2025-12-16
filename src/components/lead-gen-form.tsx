@@ -144,7 +144,7 @@ export default function LeadGenForm() {
 
   return (
     <Card className="w-full max-w-4xl shadow-2xl overflow-hidden border-none rounded-lg">
-      <div className="relative h-64 w-full">
+      <div className="relative h-80 w-full">
          <Image
           src="https://drive.google.com/uc?id=1xA42E5URSSA6tOYsO-X_P0vpQ5vfuV0r"
           alt="Header"
