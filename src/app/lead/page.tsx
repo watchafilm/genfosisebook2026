@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUser } from '@/firebase';
 import { useCollection } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
 import { useFirestore } from '@/firebase';
@@ -17,7 +16,6 @@ import {
   TableCell,
 } from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { getAuth, signOut } from 'firebase/auth';
 
 type Lead = {
   id: string;
@@ -38,26 +36,28 @@ type Lead = {
 };
 
 export default function LeadPage() {
-  const { user, loading } = useUser();
   const router = useRouter();
   const firestore = useFirestore();
+  const [loading, setLoading] = useState(true);
 
   const leadsQuery = firestore ? query(collection(firestore, 'leads'), orderBy('submittedAt', 'desc')) : null;
   const { data: leads, loading: leadsLoading } = useCollection<Lead>(leadsQuery);
 
   useEffect(() => {
-    if (!loading && !user) {
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    if (isAuthenticated !== 'true') {
       router.push('/login');
+    } else {
+      setLoading(false);
     }
-  }, [user, loading, router]);
+  }, [router]);
 
-  const handleLogout = async () => {
-    const auth = getAuth();
-    await signOut(auth);
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
     router.push('/login');
   };
 
-  if (loading || !user) {
+  if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <p>Loading...</p>
@@ -102,7 +102,7 @@ export default function LeadPage() {
                       <TableCell>{lead.companyName}</TableCell>
                       <TableCell>{lead.jobTitle}</TableCell>
                       <TableCell>
-                        {new Date(lead.submittedAt.seconds * 1000).toLocaleString()}
+                        {lead.submittedAt ? new Date(lead.submittedAt.seconds * 1000).toLocaleString() : 'N/A'}
                       </TableCell>
                     </TableRow>
                   ))}

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'firebase/auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,7 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -20,43 +19,19 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    const auth = getAuth();
 
-    // Map hardcoded username to email
-    const firebaseEmail = 'genfosis@example.com';
-    
-    // Check if the provided username is correct
-    if (email.toLowerCase() !== 'genfosis') {
-         toast({
-            variant: "destructive",
-            title: "Invalid Credentials",
-            description: "Please check your username and password.",
-        });
-        setIsLoading(false);
-        return;
-    }
-
-    try {
-      await setPersistence(auth, browserLocalPersistence);
-      await signInWithEmailAndPassword(auth, firebaseEmail, password);
+    // Hardcoded credentials check
+    if (username.toLowerCase() === 'genfosis' && password === 'sisfogen') {
+      // Simulate a successful login
+      localStorage.setItem('isAuthenticated', 'true');
       router.push('/lead');
-    } catch (error: any) {
-      console.error(error);
-      if (error.code === 'auth/configuration-not-found' || error.code === 'auth/operation-not-allowed') {
-         toast({
-            variant: "destructive",
-            title: "Login Failed",
-            description: "Email/Password sign-in is not enabled. Please enable it in your Firebase project settings.",
-        });
-      } else {
-         toast({
-          variant: "destructive",
-          title: "Login Failed",
-          description: "Please check your username and password.",
-        });
-      }
-    } finally {
-        setIsLoading(false);
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Invalid Credentials",
+        description: "Please check your username and password.",
+      });
+      setIsLoading(false);
     }
   };
 
@@ -75,8 +50,8 @@ export default function LoginPage() {
                 id="username"
                 type="text"
                 placeholder="genfosis"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
