@@ -83,7 +83,7 @@ export default function LeadGenForm() {
     defaultValues: {
       firstName: '',
       lastName: '',
-      age: '' as any,
+      age: '',
       phone: '',
       email: '',
       companyName: '',
@@ -143,7 +143,7 @@ export default function LeadGenForm() {
   }
 
   return (
-    <Card className="w-full max-w-4xl shadow-2xl overflow-hidden">
+    <Card className="w-full max-w-4xl shadow-2xl overflow-hidden border-none">
       <div className="relative h-64 w-full">
          <Image
           src="https://drive.google.com/uc?id=1xA42E5URSSA6tOYsO-X_P0vpQ5vfuV0r"
@@ -152,16 +152,14 @@ export default function LeadGenForm() {
           objectFit="cover"
           data-ai-hint="header image"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-end p-8">
-            <div className="text-center text-white">
-                <CardTitle className="font-headline text-4xl font-bold">Get Your Free Health Tech Report</CardTitle>
-                <CardDescription className="mt-2 text-gray-200 text-lg">
-                กรอกแบบฟอร์มด้านล่างเพื่อดาวน์โหลดรายงานพิเศษเกี่ยวกับเทรนด์สุขภาพล่าสุด
-                </CardDescription>
-            </div>
-        </div>
       </div>
-      <CardContent className="p-8">
+      <CardHeader className="text-center p-8">
+        <CardTitle className="font-headline text-4xl font-bold tracking-tight">Get Your Free Health Tech Report</CardTitle>
+        <CardDescription className="mt-2 text-lg text-muted-foreground">
+        กรอกแบบฟอร์มด้านล่างเพื่อดาวน์โหลดรายงานพิเศษเกี่ยวกับเทรนด์สุขภาพล่าสุด
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="p-8 pt-0">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
