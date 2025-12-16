@@ -86,7 +86,7 @@ export default function LeadPage() {
         `"${lead.jobTitle || ''}"`,
         `"${lead.companyType || ''}"`,
         `"${lead.gender || ''}"`,
-        lead.age,
+        lead.age || '',
         `"${lead.emailSubscription || ''}"`,
         `"${submittedAt}"`
       ];
@@ -94,7 +94,7 @@ export default function LeadPage() {
     });
 
     const csvString = csvRows.join('\n');
-    const blob = new Blob([csvString], { type: 'text/csv' });
+    const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.setAttribute('hidden', '');
