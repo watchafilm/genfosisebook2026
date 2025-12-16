@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCollection } from '@/firebase';
-import { collection, query, orderBy } from 'firebase/firestore';
+import { collection, query, orderBy, type Query } from 'firebase/firestore';
 import { useFirestore } from '@/firebase';
 import { LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +40,11 @@ export default function LeadPage() {
   const firestore = useFirestore();
   const [loading, setLoading] = useState(true);
 
-  const leadsQuery = firestore ? query(collection(firestore, 'leads'), orderBy('submittedAt', 'desc')) : null;
+  const leadsQuery = useMemo(() => {
+    if (!firestore) return null;
+    return query(collection(firestore, 'leads'), orderBy('submittedAt', 'desc')) as Query<Lead>;
+  }, [firestore]);
+
   const { data: leads, loading: leadsLoading } = useCollection<Lead>(leadsQuery);
 
   useEffect(() => {
