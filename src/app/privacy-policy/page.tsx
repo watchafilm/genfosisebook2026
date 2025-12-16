@@ -15,55 +15,34 @@ export default function PrivacyPolicyPage() {
         </Button>
         <Card className="w-full shadow-lg">
           <CardHeader>
-            <CardTitle className="font-headline text-4xl">Privacy Policy</CardTitle>
-            <CardDescription>Our commitment to your privacy</CardDescription>
+            <CardTitle className="font-headline text-2xl">
+              นโยบายความเป็นส่วนตัวของผู้รับเอกสาร E-book: Longevity Trend 2026 by Genfosis (Privacy
+              Notice)
+            </CardTitle>
+            <CardDescription>บริษัท เจ็นโฟสิส จำกัด</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 text-foreground/90">
+            <p>
+              บริษัท เจ็นโฟสิส จำกัด (ต่อไปนี้จะเรียกว่า “บริษัทฯ”) เป็นผู้สร้างเอกสาร E-book: Longevity Trend 2026 by
+              Genfosis บริษัทฯ ขอเรียนว่า บริษัทฯ เคารพความเป็นส่วนตัวของท่านและตระหนักดีว่าข้อมูลส่วนบุคคลของแต่ละท่านมีความสำคัญอย่างยิ่ง บริษัทฯ จึงต้องการที่จะชี้แจงให้ทราบเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของท่าน
+            </p>
+            <p>
+              ดังนั้น บริษัทฯ จึงได้มีนโยบายคุ้มครองข้อมูลส่วนบุคคลนี้ เพื่อชี้แจงรายละเอียดและ วิธีการจัดเก็บรวบรวม ใช้
+              และ/หรือเปิดเผย การคุ้มครองข้อมูล การเข้าถึงข้อมูล การโอนย้าย และการวิเคราะห์ประมวลผลข้อมูลส่วนบุคคลของท่าน ดังต่อไปนี้
+            </p>
+            <p>
+              ข้อมูลส่วนบุคคลในทีนี้ หมายถึง ข้อมูลต่างๆ ในการทำการลงทะเบียนเพื่อรับเอกสาร E-book: Longevity Trend
+              2026 by Genfosis
+            </p>
+            <p>
+              นโยบายการคุ้มครองข้อมูลส่วนบุคคล (Privacy Policy) นี้อยู่ภายใต้พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล
+              พ.ศ. 2562 โดยบริษัทฯ มีอำนาจหน้าที่ตัดสินใจเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล ซึ่งตามกฎหมายเรียกว่า “ผู้ควบคุมข้อมูลส่วนบุคคล” โดยมีพนักงานที่บริษัทฯ มอบหมายโดยเฉพาะให้มีหน้าที่ดำเนินการเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลตามคำสั่งหรือในนามของบริษัทฯ ซึ่งตามกฎหมายเรียกว่า “ผู้ประมวลผลข้อมูลส่วนบุคคล” ส่วนท่านถือเป็น “เจ้าของข้อมูลส่วนบุคคล” ตามกฎหมายนี้
+            </p>
             <div className="space-y-2">
-              <h2 className="font-headline text-2xl font-semibold">Introduction</h2>
+              <h3 className="font-headline text-xl font-semibold">ข้อ 1. ข้อมูลส่วนบุคคลอะไรบ้างที่บริษัทฯ เก็บรวบรวม ใช้ และ/หรือเปิดเผย</h3>
               <p>
-                This is a sample text for your privacy policy. In a real application, you would need to detail how you collect, use, and protect user data. This sample policy outlines general principles.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">1. Information We Collect</h3>
-              <p>
-                We collect information you provide directly to us when you fill out our lead form. This may include, but is not limited to:
-              </p>
-              <ul className="list-disc space-y-1 pl-6">
-                <li>Personal Identification Information (Name, Gender, Age)</li>
-                <li>Contact Information (Email address, Phone number)</li>
-                <li>Professional Information (Company Name, Company Type, Job Title)</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">2. How We Use Your Information</h3>
-              <p>
-                The information we collect is used for the following purposes:
-              </p>
-               <ul className="list-disc space-y-1 pl-6">
-                <li>To provide you with the resource you requested (e.g., the PDF report download).</li>
-                <li>To contact you regarding your inquiry or interest in our services.</li>
-                <li>To send you marketing communications and health newsletters, but only if you have explicitly opted in.</li>
-                <li>To improve our website and offerings.</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">3. Data Sharing and Disclosure</h3>
-              <p>
-                We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing our users, so long as those parties agree to keep this information confidential.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">4. Your Consent</h3>
-              <p>
-                By using our site and submitting the form, you consent to our privacy policy. You may withdraw your consent at any time.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">5. Contacting Us</h3>
-              <p>
-                If there are any questions regarding this privacy policy, you may contact us at <a href="mailto:privacy@example.com" className="text-accent underline">privacy@example.com</a>.
+                บริษัทฯ จะเก็บรวบรวมข้อมูลส่วนบุคคลซึ่งเป็นข้อมูลที่ทำให้สามารถระบุตัวตนของท่านได้ ไม่ว่าทางตรงหรือทางอ้อม ได้แก่ ข้อมูลที่ท่านให้ไว้โดยตรงจากการลงทะเบียนผ่านระบบตัวกลางเพื่อรับเอกสาร E-book:
+                Longevity Trend 2026 by Genfosis
               </p>
             </div>
           </CardContent>

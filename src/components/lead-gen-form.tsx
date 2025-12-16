@@ -145,13 +145,15 @@ export default function LeadGenForm() {
   return (
     <Card className="w-full max-w-4xl shadow-2xl overflow-hidden border-none rounded-lg">
       <div className="relative h-80 w-full">
-         <Image
+        <Image
           src="https://drive.google.com/uc?id=1xA42E5URSSA6tOYsO-X_P0vpQ5vfuV0r"
           alt="Header"
           layout="fill"
           objectFit="cover"
           data-ai-hint="header image"
         />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+        </div>
       </div>
       <CardHeader className="text-center p-8 bg-card">
         <CardTitle className="font-headline text-4xl font-bold tracking-tight text-primary">Get Your Free Health Tech E-Book</CardTitle>
@@ -374,7 +376,7 @@ export default function LeadGenForm() {
                     <FormLabel>
                       ฉันยินยอมให้ข้อมูลตาม{' '}
                       <Link href="/privacy-policy" className="font-semibold text-accent underline-offset-4 hover:underline" target="_blank">
-                        เงื่อนไขความเป็นส่วนตัว
+                        นโยบายความเป็นส่วนตัวของผู้รับเอกสาร E-book: Longevity Trend 2026 by Genfosis (Privacy Notice) บริษัท เจ็นโฟสิส จำกัด
                       </Link>
                     </FormLabel>
                     <FormMessage />
