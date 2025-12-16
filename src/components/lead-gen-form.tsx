@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import Link from 'next/link';
 import { Loader2, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -33,6 +34,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { useFirestore } from '@/firebase';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
   firstName: z.string().min(1, 'ต้องระบุชื่อจริง'),
@@ -71,6 +75,8 @@ const companyTypes = [
 export default function LeadGenForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
+  const firestore = useFirestore();
+  const { toast } = useToast();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -97,33 +103,65 @@ export default function LeadGenForm() {
   };
 
   async function onSubmit(values: FormValues) {
+    if (!firestore) {
+        toast({
+            variant: "destructive",
+            title: "Error",
+            description: "Firestore is not available. Please try again later.",
+        });
+        return;
+    }
+
     setIsSubmitting(true);
-    console.log('Form Submitted:', values);
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    handleDownload();
-
-    setIsSubmitting(false);
-    setIsSubmitSuccessful(true);
     
-    // Reset form after a delay
-    setTimeout(() => {
-        form.reset();
-        setIsSubmitSuccessful(false);
-    }, 5000);
+    try {
+        const { privacyAgreement, ...leadData } = values;
+        const docRef = await addDoc(collection(firestore, 'leads'), {
+            ...leadData,
+            submittedAt: serverTimestamp(),
+        });
+        console.log('Document written with ID: ', docRef.id);
+        
+        handleDownload();
+        setIsSubmitSuccessful(true);
+        
+        setTimeout(() => {
+            form.reset();
+            setIsSubmitSuccessful(false);
+        }, 5000);
+
+    } catch (e) {
+        console.error("Error adding document: ", e);
+        toast({
+            variant: "destructive",
+            title: "Submission Failed",
+            description: "There was an error submitting the form. Please try again.",
+        });
+    } finally {
+        setIsSubmitting(false);
+    }
   }
 
   return (
-    <Card className="w-full max-w-2xl shadow-2xl">
-      <CardHeader>
-        <CardTitle className="font-headline text-3xl text-center">Get Your Free Health Tech Report</CardTitle>
-        <CardDescription className="text-center">
-          กรอกแบบฟอร์มด้านล่างเพื่อดาวน์โหลดรายงานพิเศษเกี่ยวกับเทรนด์สุขภาพล่าสุด
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+    <Card className="w-full max-w-2xl shadow-2xl overflow-hidden">
+      <div className="relative h-48 w-full">
+         <Image
+          src="https://drive.google.com/uc?id=1xA42E5URSSA6tOYsO-X_P0vpQ5vfuV0r"
+          alt="Header"
+          layout="fill"
+          objectFit="cover"
+          data-ai-hint="header image"
+        />
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
+            <div className="text-center text-white">
+                <CardTitle className="font-headline text-3xl">Get Your Free Health Tech Report</CardTitle>
+                <CardDescription className="mt-2 text-gray-200">
+                กรอกแบบฟอร์มด้านล่างเพื่อดาวน์โหลดรายงานพิเศษเกี่ยวกับเทรนด์สุขภาพล่าสุด
+                </CardDescription>
+            </div>
+        </div>
+      </div>
+      <CardContent className="p-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

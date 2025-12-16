@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "A lead collected from the form",
+      "type": "object",
+      "properties": {
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "gender": { "type": "string", "enum": ["male", "female", "other"] },
+        "age": { "type": "number" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "companyName": { "type": "string" },
+        "companyType": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "emailSubscription": { "type": "string", "enum": ["subscribe", "unsubscribe"] },
+        "submittedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "gender",
+        "age",
+        "phone",
+        "email",
+        "companyName",
+        "companyType",
+        "jobTitle",
+        "emailSubscription"
+      ]
+    }
+  },
+  "auth": {
+    "providers": ["email"]
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": { "$ref": "#/backend/entities/Lead" },
+      "description": "Stores individual lead data."
+    }
+  }
+}
