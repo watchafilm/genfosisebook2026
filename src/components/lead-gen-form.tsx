@@ -143,7 +143,7 @@ export default function LeadGenForm() {
   }
 
   return (
-    <Card className="w-full max-w-4xl shadow-2xl overflow-hidden border-none">
+    <Card className="w-full max-w-4xl shadow-2xl overflow-hidden border-none rounded-lg">
       <div className="relative h-64 w-full">
          <Image
           src="https://drive.google.com/uc?id=1xA42E5URSSA6tOYsO-X_P0vpQ5vfuV0r"
@@ -153,10 +153,10 @@ export default function LeadGenForm() {
           data-ai-hint="header image"
         />
       </div>
-      <CardHeader className="text-center p-8">
-        <CardTitle className="font-headline text-4xl font-bold tracking-tight">Get Your Free Health Tech Report</CardTitle>
+      <CardHeader className="text-center p-8 bg-card">
+        <CardTitle className="font-headline text-4xl font-bold tracking-tight text-primary">Get Your Free Health Tech Report</CardTitle>
         <CardDescription className="mt-2 text-lg text-muted-foreground">
-        กรอกแบบฟอร์มด้านล่างเพื่อดาวน์โหลดรายงานพิเศษเกี่ยวกับเทรนด์สุขภาพล่าสุด
+        กรอกแบบฟอร์มด้านล่างเพื่อรับ E-BOOK พิเศษเกี่ยวกับเทรนด์สุขภาพล่าสุด
         </CardDescription>
       </CardHeader>
       <CardContent className="p-8 pt-0">
