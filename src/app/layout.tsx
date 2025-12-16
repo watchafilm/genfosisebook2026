@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { FirebaseClientProvider } from '@/firebase/client-provider';
+import CreateAdminUser from '@/firebase/auth/create-user-client';
+
 
 export const metadata: Metadata = {
   title: 'LeadGen Form',
@@ -25,6 +27,7 @@ export default function RootLayout({
           {children}
         </FirebaseClientProvider>
         <Toaster />
+        <CreateAdminUser />
       </body>
     </html>
   );
