@@ -154,7 +154,7 @@ export default function LeadGenForm() {
         />
       </div>
       <CardHeader className="text-center p-8 bg-card">
-        <CardTitle className="font-headline text-4xl font-bold tracking-tight text-primary">Get Your Free Health Tech Report</CardTitle>
+        <CardTitle className="font-headline text-4xl font-bold tracking-tight text-primary">Get Your Free Health Tech E-Book</CardTitle>
         <CardDescription className="mt-2 text-lg text-muted-foreground">
         กรอกแบบฟอร์มด้านล่างเพื่อรับ E-BOOK พิเศษเกี่ยวกับเทรนด์สุขภาพล่าสุด
         </CardDescription>
