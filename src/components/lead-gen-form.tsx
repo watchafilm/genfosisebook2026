@@ -83,7 +83,7 @@ export default function LeadGenForm() {
     defaultValues: {
       firstName: '',
       lastName: '',
-      age: undefined,
+      age: '' as any,
       phone: '',
       email: '',
       companyName: '',
@@ -237,7 +237,7 @@ export default function LeadGenForm() {
                     <FormItem>
                         <FormLabel>อายุ</FormLabel>
                         <FormControl>
-                        <Input type="number" placeholder="30" {...field} onChange={e => field.onChange(e.target.valueAsNumber)} />
+                        <Input type="number" placeholder="30" {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
