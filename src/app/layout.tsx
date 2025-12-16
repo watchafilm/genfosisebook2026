@@ -5,8 +5,8 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 
 export const metadata: Metadata = {
-  title: 'LeadGen Form',
-  description: 'A lead generation form to download a health tech report.',
+  title: 'Genfosis E-Book 2026',
+  description: 'Longevity 2026 - อัพเดตเพื่อเปลี่ยนสุขภาพในปี 2026',
 };
 
 export default function RootLayout({
