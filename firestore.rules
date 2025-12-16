@@ -7,9 +7,9 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
-    // Allow logged-in users to read leads
+    // Allow public read for leads and public write for the form
     match /leads/{leadId} {
-      allow read: if request.auth != null;
+      allow read: if true;
       allow write: if true; // Allow public write for the form
     }
   }
