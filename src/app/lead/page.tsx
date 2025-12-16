@@ -32,7 +32,7 @@ type Lead = {
   submittedAt: {
     seconds: number;
     nanoseconds: number;
-  };
+  } | null;
 };
 
 export default function LeadPage() {
