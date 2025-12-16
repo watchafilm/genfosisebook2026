@@ -10,60 +10,60 @@ export default function PrivacyPolicyPage() {
         <Button asChild variant="outline" className="self-start">
           <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            กลับไปที่แบบฟอร์ม
+            Back to Form
           </Link>
         </Button>
         <Card className="w-full shadow-lg">
           <CardHeader>
-            <CardTitle className="font-headline text-4xl">นโยบายความเป็นส่วนตัว</CardTitle>
-            <CardDescription>ความมุ่งมั่นของเราต่อความเป็นส่วนตัวของคุณ</CardDescription>
+            <CardTitle className="font-headline text-4xl">Privacy Policy</CardTitle>
+            <CardDescription>Our commitment to your privacy</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 text-foreground/90">
             <div className="space-y-2">
-              <h2 className="font-headline text-2xl font-semibold">บทนำ</h2>
+              <h2 className="font-headline text-2xl font-semibold">Introduction</h2>
               <p>
-                นี่เป็นข้อความตัวอย่างสำหรับนโยบายความเป็นส่วนตัวของคุณ ในแอปพลิเคชันจริง คุณจะต้องให้รายละเอียดเกี่ยวกับวิธีการรวบรวม ใช้ และปกป้องข้อมูลของผู้ใช้ นโยบายตัวอย่างนี้สรุปหลักการทั่วไป
+                This is a sample text for your privacy policy. In a real application, you would need to detail how you collect, use, and protect user data. This sample policy outlines general principles.
               </p>
             </div>
             <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">1. ข้อมูลที่เราเก็บรวบรวม</h3>
+              <h3 className="font-headline text-xl font-semibold">1. Information We Collect</h3>
               <p>
-                เราเก็บรวบรวมข้อมูลที่คุณให้โดยตรงกับเราเมื่อคุณกรอกแบบฟอร์มสำหรับลูกค้าเป้าหมายของเรา ซึ่งอาจรวมถึงแต่ไม่จำกัดเพียง:
+                We collect information you provide directly to us when you fill out our lead form. This may include, but is not limited to:
               </p>
               <ul className="list-disc space-y-1 pl-6">
-                <li>ข้อมูลระบุตัวตนส่วนบุคคล (ชื่อ, เพศ, อายุ)</li>
-                <li>ข้อมูลติดต่อ (ที่อยู่อีเมล, หมายเลขโทรศัพท์)</li>
-                <li>ข้อมูลทางวิชาชีพ (ชื่อบริษัท, ประเภทบริษัท, ตำแหน่งงาน)</li>
+                <li>Personal Identification Information (Name, Gender, Age)</li>
+                <li>Contact Information (Email address, Phone number)</li>
+                <li>Professional Information (Company Name, Company Type, Job Title)</li>
               </ul>
             </div>
             <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">2. วิธีที่เราใช้ข้อมูลของคุณ</h3>
+              <h3 className="font-headline text-xl font-semibold">2. How We Use Your Information</h3>
               <p>
-                ข้อมูลที่เราเก็บรวบรวมจะถูกใช้เพื่อวัตถุประสงค์ดังต่อไปนี้:
+                The information we collect is used for the following purposes:
               </p>
                <ul className="list-disc space-y-1 pl-6">
-                <li>เพื่อจัดหาทรัพยากรที่คุณร้องขอ (เช่น การดาวน์โหลดรายงาน PDF)</li>
-                <li>เพื่อติดต่อคุณเกี่ยวกับคำถามหรือความสนใจในบริการของเรา</li>
-                <li>เพื่อส่งการสื่อสารทางการตลาดและข่าวสารเกี่ยวกับสุขภาพ แต่เฉพาะในกรณีที่คุณเลือกรับอย่างชัดเจนเท่านั้น</li>
-                <li>เพื่อปรับปรุงเว็บไซต์และข้อเสนอของเรา</li>
+                <li>To provide you with the resource you requested (e.g., the PDF report download).</li>
+                <li>To contact you regarding your inquiry or interest in our services.</li>
+                <li>To send you marketing communications and health newsletters, but only if you have explicitly opted in.</li>
+                <li>To improve our website and offerings.</li>
               </ul>
             </div>
             <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">3. การแบ่งปันและเปิดเผยข้อมูล</h3>
+              <h3 className="font-headline text-xl font-semibold">3. Data Sharing and Disclosure</h3>
               <p>
-                เราไม่ขาย แลกเปลี่ยน หรือถ่ายโอนข้อมูลที่สามารถระบุตัวตนของคุณไปยังบุคคลภายนอก ซึ่งไม่รวมถึงบุคคลที่สามที่เชื่อถือได้ซึ่งช่วยเราในการดำเนินงานเว็บไซต์ ดำเนินธุรกิจ หรือให้บริการแก่ผู้ใช้ของเรา ตราบใดที่บุคคลเหล่านั้นตกลงที่จะเก็บข้อมูลนี้เป็นความลับ
+                We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing our users, so long as those parties agree to keep this information confidential.
               </p>
             </div>
             <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">4. ความยินยอมของคุณ</h3>
+              <h3 className="font-headline text-xl font-semibold">4. Your Consent</h3>
               <p>
-                โดยการใช้เว็บไซต์ของเราและส่งแบบฟอร์ม ถือว่าคุณยินยอมต่อนโยบายความเป็นส่วนตัวของเรา คุณสามารถถอนความยินยอมได้ตลอดเวลา
+                By using our site and submitting the form, you consent to our privacy policy. You may withdraw your consent at any time.
               </p>
             </div>
             <div className="space-y-2">
-              <h3 className="font-headline text-xl font-semibold">5. การติดต่อเรา</h3>
+              <h3 className="font-headline text-xl font-semibold">5. Contacting Us</h3>
               <p>
-                หากมีคำถามใด ๆ เกี่ยวกับนโยบายความเป็นส่วนตัวนี้ คุณสามารถติดต่อเราได้ที่ <a href="mailto:privacy@example.com" className="text-accent underline">privacy@example.com</a>.
+                If there are any questions regarding this privacy policy, you may contact us at <a href="mailto:privacy@example.com" className="text-accent underline">privacy@example.com</a>.
               </p>
             </div>
           </CardContent>
