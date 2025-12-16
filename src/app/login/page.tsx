@@ -42,11 +42,19 @@ export default function LoginPage() {
       router.push('/lead');
     } catch (error: any) {
       console.error(error);
-       toast({
-        variant: "destructive",
-        title: "Login Failed",
-        description: "Please check your username and password.",
-      });
+      if (error.code === 'auth/configuration-not-found' || error.code === 'auth/operation-not-allowed') {
+         toast({
+            variant: "destructive",
+            title: "Login Failed",
+            description: "Email/Password sign-in is not enabled. Please enable it in your Firebase project settings.",
+        });
+      } else {
+         toast({
+          variant: "destructive",
+          title: "Login Failed",
+          description: "Please check your username and password.",
+        });
+      }
     } finally {
         setIsLoading(false);
     }
