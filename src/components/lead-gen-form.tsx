@@ -93,7 +93,7 @@ export default function LeadGenForm() {
   });
 
   const handleDownload = () => {
-    const pdfUrl = 'src/Longevity Tech Trend 2026 .pdf';
+    const pdfUrl = 'src/lib/Longevity Tech Trend 2026 .pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.setAttribute('download', 'health-trends-report.pdf');
